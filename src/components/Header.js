@@ -1,12 +1,10 @@
-import Tasks from "./Tasks"
-
-const Header = () => {
+const Header = ({ toggleAdd }) => {
   return (
     <header className="header">
-        <h1>Task Tracker</h1>
-        <button>Add</button>
+      <h1>Task Tracker</h1>
+      <button onClick={toggleAdd}>Add</button>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

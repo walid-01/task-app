@@ -1,10 +1,8 @@
 import Task from "./Task";
 
-const Tasks = ({ tasks }) => {
+const Tasks = ({ tasks, onDelete, onToggle }) => {
   return tasks.map((task) => (
-    <div className="task reminder" key={task.id}>
-      <Task task={task} />
-    </div>
+    <Task task={task} key={task.id} onDelete={onDelete} onToggle={onToggle} />
   ));
 };
 

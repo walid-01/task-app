@@ -1,13 +1,18 @@
-import React from "react";
-
-const Task = ({ task }) => {
+const Task = ({ task, onDelete, onToggle }) => {
   return (
-    <>
-      <h3>{task.text}</h3>
-      <p>{task.day}</p>
-      <p>Reminder: {task.reminder ? "On" : "Off"}</p>
-      {/* <button onClick={() => toggleReminder(task)}>test</button> */}
-    </>
+    <div
+      className={`task ${task.reminder ? "reminder" : ""}`}
+      onDoubleClick={() => onToggle(task.id)}
+    >
+      <div>
+        <h3>{task.text}</h3>
+        <p>{task.day}</p>
+        <p>Reminder: {task.reminder ? "On" : "Off"}</p>
+      </div>
+      <button className="close" onClick={() => onDelete(task.id)}>
+        X
+      </button>
+    </div>
   );
 };
 

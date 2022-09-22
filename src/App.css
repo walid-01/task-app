@@ -38,8 +38,69 @@ html {
     padding: 10px;
     margin: 5px 0;
     background-color: rgb(7, 7, 55);
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
 }
 
 .reminder {
     border-left: 3px solid rgb(21, 113, 141);
+}
+
+.close {
+    color: rgb(31, 141, 175);
+    background-color: rgba(0, 0, 0, 0.26);
+    border: none;
+    font-size: 20px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.add-form {
+    padding: 0 15px;
+    background-color: rgb(7, 7, 55);
+    color: white;
+    font-size: 18px;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    padding: 2.5px 0;
+}
+
+.form-control > input {
+    height: 16px;
+    border: none;
+    padding: 5px;
+    margin: 3px 0;
+    border-radius: 2px;
+    font-size: 16px;
+}
+
+.form-check {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.form-check > label {
+    margin-right: 10px;
+}
+
+.checkbox-input {
+    width: 20px;
+    height: 20px;
+}
+
+.task-submit {
+    width: 100%;
+    background-color: rgb(21, 113, 141);
+    color: lightgrey;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 2.5px;
+    margin-top: 10px;
+    font-size: 16px;
 }
