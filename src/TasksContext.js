@@ -38,7 +38,6 @@ export const TasksProvider = ({ children }) => {
 
   //Add Task
   const addTask = async (task) => {
-    console.log(task.id);
     const res = await fetch(`http://localhost:8000/tasks`, {
       method: "POST",
       headers: {
@@ -49,13 +48,10 @@ export const TasksProvider = ({ children }) => {
 
     const data = await res.json();
     setTasks([...tasks, data]);
-
-    setTasks([...tasks, { ...task }]);
   };
 
   //Delete Task
   const deleteTask = async (id) => {
-    console.log(id);
     await fetch(`http://localhost:8000/tasks/${id}`, {
       method: "DELETE",
     });
@@ -65,7 +61,6 @@ export const TasksProvider = ({ children }) => {
 
   //Toggle Reminder
   const toggleReminder = async (id) => {
-    console.log(id);
     const taskToToggle = await fetchTask(id);
     const updatedTask = { ...taskToToggle, reminder: !taskToToggle.reminder };
 
