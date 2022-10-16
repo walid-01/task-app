@@ -1,9 +1,11 @@
 import Task from "./Task";
+import TasksContext from "../TasksContext";
+import { useContext } from "react";
 
-const Tasks = ({ tasks, onDelete, onToggle }) => {
-  return tasks.map((task) => (
-    <Task task={task} key={task.id} onDelete={onDelete} onToggle={onToggle} />
-  ));
+const Tasks = () => {
+  const { tasks } = useContext(TasksContext);
+
+  return tasks.map((task) => <Task task={task} key={task.id} />);
 };
 
 export default Tasks;

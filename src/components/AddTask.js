@@ -1,11 +1,15 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import TasksContext from "../TasksContext";
 
-const AddTask = ({ onAdd }) => {
+const AddTask = () => {
   const [text, setText] = useState("");
   const [day, setDay] = useState("");
   const [reminder, setReminder] = useState(false);
 
+  const { addTask } = useContext(TasksContext);
+
   const onSubmit = (e) => {
+    //Prevents the page from reloading
     e.preventDefault();
 
     if (!text) {
@@ -13,7 +17,7 @@ const AddTask = ({ onAdd }) => {
       return;
     }
 
-    onAdd({ text, day, reminder });
+    addTask({ text, day, reminder, id: Math.floor(Math.random() * 10000) + 1 });
 
     setText("");
     setDay("");
